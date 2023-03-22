@@ -25,6 +25,3 @@ for i in range(len(titles)):
     print("URL:", titles[i].find("a")["href"])
     print("Image:", images[i]['src'])
     print("")
-
-#sed this sid kontol
-#this is a new line
