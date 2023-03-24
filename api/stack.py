@@ -1,10 +1,14 @@
+from dotenv import load_dotenv
 from flask import Flask
-import requests
+
+import requests, os
 
 class StackOverflowAPI:
-    
+    def config():
+        load_dotenv()
+        
     def __init__(self):
-        self.base_url = "https://api.stackexchange.com/2.3"
+        self.base_url = os.getenv('base_url')
         self.headers = {"Accept-Encoding": "gzip"}
         
     def fetch_questions(self, order="desc", sort="activity", site="stackoverflow"):
