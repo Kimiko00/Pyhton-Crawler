@@ -5,7 +5,7 @@ class TwitterAPI:
     def config():
         load_dotenv()
     
-    def __init__ (self, consumer_key, consumer_secret, access_token, access_token_secret):
+    def __init__ (self):
         self.consumer_key = os.getenv('consumer_key')
         self.consumer_secret = os.getenv('consumer_secret')
         self.access_token = os.getenv('access_token')
