@@ -1,13 +1,17 @@
-import tweepy
+from dotenv import load_dotenv
+import tweepy, os
 
 class TwitterAPI:
+    def config():
+        load_dotenv()
+    
     def __init__ (self, consumer_key, consumer_secret, access_token, access_token_secret):
-        self.consumer_key = consumer_key
-        self.secret_key = consumer_secret
-        self.access_token = access_token
-        self.access_token_secret = access_token_secret
-        self.auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-        self.auth.set_access_token(access_token, access_token_secret)
+        self.consumer_key = os.getenv('consumer_key')
+        self.consumer_secret = os.getenv('consumer_secret')
+        self.access_token = os.getenv('access_token')
+        self.access_token_secret = os.getenv('access_token_secret')
+        self.auth = tweepy.OAuthHandler(self.consumer_key, self.consumer_secret)
+        self.auth.set_access_token(self.access_token, self.access_token_secret)
         self.api = tweepy.API(self.auth)
         
     def search_tweets(self, topic, count):
