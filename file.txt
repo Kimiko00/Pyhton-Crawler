@@ -1,0 +1,6 @@
+consumer_key=W1rPR8gBhwQrlRemfXxzeXt61
+consumer_secret=UBBpLajtaffCOfLUAY04PDDQMaw2e4jYNazSnTflIsN0fKn1pE
+access_token=968560301464461312-z9AfFyMs4tNaomy5V5dPSv2zqxXawVA
+access_token_secret=S6Jx76oxiQi8bFgEICZ8JP276vlmwiCrEHKZDTcJb8Pkg
+base_url=https://api.stackexchange.com/2.3
+url=https://services.nvd.nist.gov/rest/json
