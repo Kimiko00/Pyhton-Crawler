@@ -15,6 +15,10 @@ twitter_api = TwitterAPI()
 nist = NvdAPI()
 
 #insert routing class
+@app.route('/', methods=['GET'])
+def home():
+    return f"this route is for log in user"
+
 @app.route('/api/tweets', methods=['GET'])
 def get_tweets():
     topic = "gundam"
