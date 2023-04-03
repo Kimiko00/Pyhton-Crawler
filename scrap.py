@@ -31,9 +31,15 @@ def parse_product(html):
 
 def to_csv(res):
     with open("results.csv", "a") as f:
-        writer = csv.DictWriter(f, fieldnames=["manufacturer", "title", "price"])
+        writer = csv.DictWriter(f,
+                                fieldnames=["manufacturer",
+                                            "title",
+                                            "price"
+                                            ]
+                                )
+        writer.writeheader()
         writer.writerows(res)
-
+    
 def main():
     for x in range (1, 4):
         html = get_html(x)
