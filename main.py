@@ -1,9 +1,12 @@
 from flask import Flask, jsonify
+from flask_cors import CORS, cross_origin
+
+from api.nist import NvdAPI
 from api.twitter import TwitterAPI
 from api.stack import StackOverflowAPI
-from api.nist import NvdAPI
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # create stack api object
 api = StackOverflowAPI()
@@ -20,6 +23,7 @@ def home():
     return f"this route is for log in user"
 
 @app.route('/api/tweets', methods=['GET'])
+@cross_origin()
 def get_tweets():
     topic = "gundam"
     count = 10
