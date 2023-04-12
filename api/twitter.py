@@ -20,6 +20,7 @@ class TwitterAPI:
         tweet_list = []
         for tweet in tweets:
             tweet_dict = {
+                'img': tweet.user.profile_image_url_https,
                 'user': tweet.user.screen_name,
                 'text': tweet.text,
                 'created_at': str(tweet.created_at),
